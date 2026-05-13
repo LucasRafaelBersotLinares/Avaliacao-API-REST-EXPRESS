@@ -1,0 +1,28 @@
+{
+  "name": "avaliacao-api-rest-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx ts-node",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasRafaelBersotLinares/Avaliacao-API-REST-EXPRESS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasRafaelBersotLinares/Avaliacao-API-REST-EXPRESS/issues"
+  },
+  "homepage": "https://github.com/LucasRafaelBersotLinares/Avaliacao-API-REST-EXPRESS#readme",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/typescript": "^0.4.29",
+    "express": "^5.2.1",
+    "typescript": "^6.0.3"
+  }
+}
