@@ -1,0 +1,1 @@
+{"version":3,"file":"fabricante.d.ts","sourceRoot":"","sources":["../../src/classes/fabricante.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,QAAQ,EAAC,MAAM,YAAY,CAAA;AAEnC,qBAAa,UAAU;IACnB,IAAI,EAAE,MAAM,CAAA;IACZ,QAAQ,EAAE,QAAQ,CAAA;gBAEN,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,QAAQ;CAI/C"}
