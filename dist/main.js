@@ -36,17 +36,28 @@ function listaProdutos(req, res) {
 function buscarPorID(req, res) {
     try {
         let id = req.params.id;
-        for (let i = 0; i < produtos.length; i++) {
-            if (produtos[i].id == id) {
-                res.status(200).json(produtos[i]);
-            }
-        }
+        produtos.find(id);
         throw new Error("Produto não encontrado");
     }
     catch (erro) {
         res.status(404).json({ Message: erro.message });
     }
 }
+function atualizaDados(req, res) {
+    try {
+        let id = req.params.id;
+        let data = req.body;
+        produtos.find(id => {
+            id.nome = data.nome;
+            id.preco = data.preco;
+        });
+        throw new Error("Não achou o produto para atualizar");
+    }
+    catch (erro) {
+        res.status(400).json({ Message: erro.message });
+    }
+}
+app.put('/api/produtos/atualizar/:id', atualizaDados);
 app.get('/api/produtos/lista/:id', buscarPorID);
 app.get('/api/produtos/lista', listaProdutos);
 app.post('/api/produtos', novoProduto);
