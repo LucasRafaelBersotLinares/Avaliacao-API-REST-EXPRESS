@@ -15,5 +15,5 @@ Esta API permite realizar operações básicas de CRUD:
 Projeto criado para estudos de desenvolvimento backend utilizando TypeScript e Express.
 
 ---
-Documento com os códigos fontes em formato PDF: [API CRUD - TS-NODE-EXPRESS.pdf](https://github.com/user-attachments/files/27773002/API.CRUD.-.TS-NODE-EXPRESS.pdf)
+Documento com os códigos fontes em formato PDF: [API CRUD - TS-NODE-EXPRESS (1).pdf](https://github.com/user-attachments/files/27773785/API.CRUD.-.TS-NODE-EXPRESS.1.pdf)
 Postman para testes: [Baixar Collection JSON](https://raw.githubusercontent.com/LucasRafaelBersotLinares/Avaliacao-API-REST-EXPRESS/main/API-AVALIACAO.postman_collection.json)
