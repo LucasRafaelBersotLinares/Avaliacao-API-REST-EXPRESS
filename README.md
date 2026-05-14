@@ -1,4 +1,4 @@
-[API-AVALIACAO.postman_collection.json](https://github.com/user-attachments/files/27773575/API-AVALIACAO.postman_collection.json)# CRUD API
+# CRUD API
 
 Uma API CRUD desenvolvida com Node.js, Express e TypeScript.
 
