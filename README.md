@@ -15,3 +15,4 @@ Esta API permite realizar operações básicas de CRUD:
 Projeto criado para estudos de desenvolvimento backend utilizando TypeScript e Express.
 
 ---
+## Documento com os códigos fontes em formato PDF: [API CRUD - TS-NODE-EXPRESS.pdf](https://github.com/user-attachments/files/27773002/API.CRUD.-.TS-NODE-EXPRESS.pdf)
