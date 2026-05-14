@@ -1,4 +1,4 @@
-# CRUD API
+[API-AVALIACAO.postman_collection.json](https://github.com/user-attachments/files/27773575/API-AVALIACAO.postman_collection.json)# CRUD API
 
 Uma API CRUD desenvolvida com Node.js, Express e TypeScript.
 
@@ -16,4 +16,128 @@ Projeto criado para estudos de desenvolvimento backend utilizando TypeScript e E
 
 ---
 ## Documento com os códigos fontes em formato PDF: [API CRUD - TS-NODE-EXPRESS.pdf](https://github.com/user-attachments/files/27773002/API.CRUD.-.TS-NODE-EXPRESS.pdf)
-## Documentação da API em foramto Postman: https://lucasrafaelbersotlinares-8101017.postman.co/workspace/8f63dc12-8e22-45bb-8e79-b2ff974f9766/collection/54734248-479dfa1e-4882-45b7-841a-2cdd06f9e514?action=share&source=copy-link&creator=54734248
+## Postman para testes: [Uploading{
+  "info": {
+    "_postman_id": "479dfa1e-4882-45b7-841a-2cdd06f9e514",
+    "name": "API-AVALIACAO",
+    "description": "API CRUD, serve apenas as funções básicas de um CRUD, adiciona, busca, atualiza, e deleta",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54734248",
+    "_collection_link": "https://go.postman.co/collection/54734248-479dfa1e-4882-45b7-841a-2cdd06f9e514?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "buscarID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produtos/lista/id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produtos",
+            "lista",
+            "id"
+          ]
+        },
+        "description": "Busca um produto por Path variavel\n\nRota: [http://localhost:3000/api/produtos/lista/id](http://localhost:3000/api/produtos/lista/id')\n\nid = Path variable (Colocar o número do Id que deseja)"
+      },
+      "response": []
+    },
+    {
+      "name": "listarProdutos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produtos/lista",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produtos",
+            "lista"
+          ]
+        },
+        "description": "Lista todos os produtos cadastrados\n\nRota:'[http://localhost:3000/api/produtos/lista](http://localhost:3000/api/produtos/lista')"
+      },
+      "response": []
+    },
+    {
+      "name": "adicionaProduto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produtos/adicionar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produtos",
+            "adicionar"
+          ]
+        },
+        "description": "Adiciona o produto, seguindo o padrão pré-definido\n\nRota: [http://localhost:3000/api/produtos/adicionar](http://localhost:3000/api/produtos/adicionar')"
+      },
+      "response": []
+    },
+    {
+      "name": "atualizaProduto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produtos/atualizar/id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produtos",
+            "atualizar",
+            "id"
+          ]
+        },
+        "description": "Atualiza os dados de um produto, podendo ou não serem passados, caso um dado não seja passado, ele se mantêm no antigo, utiliza de Path variable\n\nRota: [http://localhost:3000/api/produtos/atualizar/id](http://localhost:3000/api/produtos/atualizar/id')\n\nid = Path variable (Colocar o número do Id que deseja)"
+      },
+      "response": []
+    },
+    {
+      "name": "apagaProduto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/produtos/delete/id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "produtos",
+            "delete",
+            "id"
+          ]
+        },
+        "description": "Deleta um produto especifico e retorna os produtos restantes, utilizade Path variable\n\nRota: [http://localhost:3000/api/produtos/delete/id](http://localhost:3000/api/produtos/delete/id')\n\nid = Path variable (Colocar o número do Id que deseja)"
+      },
+      "response": []
+    }
+  ]
+} API-AVALIACAO.postman_collection.json…]()
