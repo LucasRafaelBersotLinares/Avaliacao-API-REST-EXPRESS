@@ -31,7 +31,22 @@ function listaProdutos(req: Request, res: Response){
     }
 }
 
+function buscarPorID(req: Request, res: Response){
+    try {
+        let id:any = req.params.id
+        for(let i = 0; i<produtos.length; i++){
+            if(produtos[i].id == id){
+                res.status(200).json(produtos[i])
+            }
+        }
+        throw new Error("Produto não encontrado")
 
+    } catch(erro: unknown){
+        res.status(404).json({Message: (erro as Error).message})
+    }
+}
+
+app.get('/api/produtos/lista/:id', buscarPorID)
 app.get('/api/produtos/lista', listaProdutos)
 app.post('/api/produtos', novoProduto)
 app.listen(PORT, () => console.log("API ESTA NA PORTA: ", PORT))

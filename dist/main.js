@@ -33,6 +33,21 @@ function listaProdutos(req, res) {
         res.status(400).json({ Message: erro.message });
     }
 }
+function buscarPorID(req, res) {
+    try {
+        let id = req.params.id;
+        for (let i = 0; i < produtos.length; i++) {
+            if (produtos[i].id == id) {
+                res.status(200).json(produtos[i]);
+            }
+        }
+        throw new Error("Produto não encontrado");
+    }
+    catch (erro) {
+        res.status(404).json({ Message: erro.message });
+    }
+}
+app.get('/api/produtos/lista/:id', buscarPorID);
 app.get('/api/produtos/lista', listaProdutos);
 app.post('/api/produtos', novoProduto);
 app.listen(PORT, () => console.log("API ESTA NA PORTA: ", PORT));
