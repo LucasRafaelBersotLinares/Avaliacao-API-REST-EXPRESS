@@ -61,13 +61,18 @@ function atualizaDados(req: Request, res: Response){
         let data:any = req.body
 
         let produto = produtos.find(p => p.id == id)
+        let produtoDup = produtos.find(p => p.id == data.id)
         if(produto){
-            produto.id = data.id ?? produto.id
-            produto.nome = data.nome ?? produto.nome
-            produto.preco = data.preco ?? produto.preco
-            produto.fabricante.nome = data.fabricante.nome ?? produto.fabricante.nome
-            produto.fabricante.endereco.cidade = data.fabricante.endereco.cidade ?? produto.fabricante.endereco.cidade
-            produto.fabricante.endereco.pais = data.fabricante.endereco.pais ?? produto.fabricante.endereco.pais
+            if(!produtoDup){
+                produto.id = data.id ?? produto.id
+            } else {
+                throw new Error("Não pode colocar ID duplicados")
+            }
+            produto.nome = data?.nome ?? produto.nome
+            produto.preco = data?.preco ?? produto.preco
+            produto.fabricante.nome = data.fabricante?.nome ?? produto.fabricante.nome
+            produto.fabricante.endereco.cidade = data.fabricante.endereco?.cidade ?? produto.fabricante.endereco.cidade
+            produto.fabricante.endereco.pais = data.fabricante.endereco?.pais ?? produto.fabricante.endereco.pais
             res.status(200).json({produto})
         }
         throw new Error("Não achou o produto para atualizar")

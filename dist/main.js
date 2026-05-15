@@ -27,7 +27,7 @@ function novoProduto(req, res) {
         }
         const produto = new produto_1.Produto(data.id, data.nome, data.preco, data.fabricante);
         produtos.push(produto);
-        res.status(200).json(produto);
+        res.status(201).json(produto);
     }
     catch (erro) {
         res.status(400).json({ Message: erro.message });
@@ -61,19 +61,25 @@ function atualizaDados(req, res) {
         let id = Number(req.params.id);
         let data = req.body;
         let produto = produtos.find(p => p.id == id);
+        let produtoDup = produtos.find(p => p.id == data.id);
         if (produto) {
-            produto.id = data.id ?? produto.id;
-            produto.nome = data.nome ?? produto.nome;
-            produto.preco = data.preco ?? produto.preco;
-            produto.fabricante.nome = data.fabricante.nome ?? produto.fabricante.nome;
-            produto.fabricante.endereco.cidade = data.fabricante.endereco.cidade ?? produto.fabricante.endereco.cidade;
-            produto.fabricante.endereco.pais = data.fabricante.endereco.pais ?? produto.fabricante.endereco.pais;
+            if (!produtoDup) {
+                produto.id = data.id ?? produto.id;
+            }
+            else {
+                throw new Error("Não pode colocar ID duplicados");
+            }
+            produto.nome = data?.nome ?? produto.nome;
+            produto.preco = data?.preco ?? produto.preco;
+            produto.fabricante.nome = data.fabricante?.nome ?? produto.fabricante.nome;
+            produto.fabricante.endereco.cidade = data.fabricante.endereco?.cidade ?? produto.fabricante.endereco.cidade;
+            produto.fabricante.endereco.pais = data.fabricante.endereco?.pais ?? produto.fabricante.endereco.pais;
             res.status(200).json({ produto });
         }
         throw new Error("Não achou o produto para atualizar");
     }
     catch (erro) {
-        res.status(400).json({ Message: erro.message });
+        res.status(404).json({ Message: erro.message });
     }
 }
 function deletaDado(req, res) {
@@ -84,7 +90,7 @@ function deletaDado(req, res) {
             produtos.splice(produto, 1);
             res.status(200).json({ produtos });
         }
-        throw new Error("Produto nao encontrado");
+        throw new Error("Produto não encontrado");
     }
     catch (erro) {
         res.status(404).json({ Message: erro.message });
