@@ -69,11 +69,17 @@ function atualizaDados(req, res) {
             else {
                 throw new Error("Não pode colocar ID duplicados");
             }
-            produto.nome = data?.nome ?? produto.nome;
-            produto.preco = data?.preco ?? produto.preco;
-            produto.fabricante.nome = data.fabricante?.nome ?? produto.fabricante.nome;
-            produto.fabricante.endereco.cidade = data.fabricante.endereco?.cidade ?? produto.fabricante.endereco.cidade;
-            produto.fabricante.endereco.pais = data.fabricante.endereco?.pais ?? produto.fabricante.endereco.pais;
+            if (!data.id || !data.nome || !data.fabricante || !data.preco) {
+                throw new Error("Produto requer id, nome, fabricante e preço");
+            }
+            if (!data.fabricante.nome || !data.fabricante.endereco.cidade || !data.fabricante.endereco.pais) {
+                throw new Error("Produto requer nome de fabricante, endereco com pais válido e endereco com cidade válida");
+            }
+            produto.nome = data.nome;
+            produto.preco = data.preco;
+            produto.fabricante.nome = data.fabricante.nome;
+            produto.fabricante.endereco.cidade = data.fabricante.endereco.cidade;
+            produto.fabricante.endereco.pais = data.fabricante.endereco.pais;
             res.status(200).json({ produto });
         }
         throw new Error("Não achou o produto para atualizar");
